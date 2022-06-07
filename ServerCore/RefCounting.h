@@ -40,7 +40,7 @@ public:
     TSharedPtr(TSharedPtr&& rhs) { _ptr = rhs._ptr; rhs._ptr = nullptr; }
     // 상속 관계 복사
     template<typename U>
-    TsharedPtr(const TSharedPtr<U>& rhs) { Set(static_cast<T*>(rhs._ptr)); }
+    TSharedPtr(const TSharedPtr<U>& rhs) { Set(static_cast<T*>(rhs._ptr)); }
 
     ~TSharedPtr() { Release(); }
 
@@ -74,7 +74,7 @@ public:
     T*          operator*() { return _ptr; }
     const T*    operator*() const { return _ptr; }
                 operator T* () const { return _ptr; }
-    T*          operator->() { return_ptr; }
+    T*          operator->() { return _ptr; }
     const T*    operator->() const { return _ptr; }
 
     bool IsNull() { return _ptr == nullptr; }
