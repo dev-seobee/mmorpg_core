@@ -61,7 +61,7 @@ void* Memory::Allocate(int32 size)
     // 최대 크기를 벗어날 경우, 일반 할당. 
     if (allocSize > MAX_ALLOC_SIZE)
     {
-        header = reinterpret_cast<MemoryHeader*>(::malloc(allocSize));
+        header = reinterpret_cast<MemoryHeader*>(::_aligned_malloc(allocSize, SLIST_ALIGNMENT));
     }
     else
     {
@@ -80,7 +80,7 @@ void Memory::Release(void* ptr)
     if (allocSize > MAX_ALLOC_SIZE)
     {
         // 메모리 풀링 최대 크기를 벗어날 경우.
-        ::free(header);
+        ::_aligned_free(header);
     }
     else
     {
