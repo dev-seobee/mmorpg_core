@@ -161,12 +161,14 @@
   <ItemGroup>
     <ClCompile Include="AccountManager.cpp" />
     <ClCompile Include="GameServer.cpp" />
+    <ClCompile Include="LFStack.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="PlayerManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AccountManager.h" />
     <ClInclude Include="ConcurrentStack.h" />
+    <ClInclude Include="LFStack.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PlayerManager.h" />
   </ItemGroup>

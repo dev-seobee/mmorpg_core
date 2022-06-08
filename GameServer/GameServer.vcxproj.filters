@@ -21,6 +21,9 @@
     <ClCompile Include="AccountManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="LFStack.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -33,6 +36,9 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="AccountManager.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="LFStack.h">
       <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
