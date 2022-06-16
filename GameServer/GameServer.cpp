@@ -5,26 +5,22 @@
 #include "CoreGlobal.h"
 #include "CoreMacro.h"
 #include "ThreadManager.h"
-#include "AccountManager.h"
-#include "PlayerManager.h"
 
-#include "Memory.h"
+#include "SocketUtils.h"
 
 int main()
 {
+    SOCKET socket = SocketUtils::CreateSocket();
+    SocketUtils::BindAnyAddress(socket, 7777);
+    SocketUtils::Listen(socket);
 
-    for (int32 i = 0; i < 3; i++)
+    SOCKET clientSocket = ::accept(socket, nullptr, nullptr);
+
+    cout << "Client Connected log" << endl;
+    while (true)
     {
-        GThreadManager->Launch([]()
-        {
-            while (true)
-            {
-                Knight* knight = xnew<Knight>();
-                cout << knight->_hp << endl;
 
-                this_thread::sleep_for(10ms);
-                xdelete(knight);
-            }
-        });
     }
+
+    GThreadManager->Join();
 }
