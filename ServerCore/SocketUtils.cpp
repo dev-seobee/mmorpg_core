@@ -12,8 +12,8 @@ void SocketUtils::Init()
 
     SOCKET dummySocket = CreateSocket();
     ASSERT_CRASH(BindWindowFunction(dummySocket, WSAID_CONNECTEX, reinterpret_cast<LPVOID*>(&ConnectEx)));
-    ASSERT_CRASH(BindWindowFunction(dummySocket, WSAID_CONNECTEX, reinterpret_cast<LPVOID*>(&DisconnectEx)));
-    ASSERT_CRASH(BindWindowFunction(dummySocket, WSAID_CONNECTEX, reinterpret_cast<LPVOID*>(&AcceptEx)));
+    ASSERT_CRASH(BindWindowFunction(dummySocket, WSAID_DISCONNECTEX, reinterpret_cast<LPVOID*>(&DisconnectEx)));
+    ASSERT_CRASH(BindWindowFunction(dummySocket, WSAID_ACCEPTEX, reinterpret_cast<LPVOID*>(&AcceptEx)));
 
     Close(dummySocket);
 }
